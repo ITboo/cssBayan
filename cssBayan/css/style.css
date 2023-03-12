@@ -28,15 +28,11 @@ body {
 /*ACCORDION*/
 .accordion-item {
     height: 100%;
-    position: relative;
     margin-bottom: 0.5%;
 }
 
 .accordion-input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
+    display: none;
 }
 
 .accordion-item__trigger {
