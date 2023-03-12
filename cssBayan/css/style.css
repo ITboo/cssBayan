@@ -2,9 +2,12 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Tilt Warp', cursive;
-
+    font-size: 2vw;
+    font-weight: bold;
+    background-color: rgba(235, 235, 235, 0.666);
+    transition: 0.3s;
 }
 
 .container {
@@ -13,14 +16,14 @@ body{
 }
 
 .bayan-title {
+    margin: 2%;
     text-transform: uppercase;
-    font-weight: bold;
 }
 
-/*.accordion {}*/
+/*ACCORDION*/
 .accordion-item {
     position: relative;
-    margin-bottom: 2%;
+    margin-bottom: 0.5%;
 }
 
 .accordion-input {
@@ -31,35 +34,95 @@ body{
 }
 
 .accordion-item__trigger {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 0.5%;
     border-top: 0.1rem solid rgb(137, 136, 138);
-    font-size: 2vw;
-    font-weight: bold;
+}
 
+.accordion-item__head{
+    margin: 0;
+    color: blue;
+    font-size: 2.3vw;
 }
-.accordion-item__trigger:hover{
-    color: rgb(231, 231, 2);
-    cursor: pointer;
+
+.accordion-item__icon{
+    width: 1.3em;
+    height: 1.3em;
+    display: none;
 }
+
 .accordion-item__content {
     display: none;
     padding: 1%;
     border-top: none;
 }
-.accordion-item__img{
+
+.accordion-item__img {
     display: block;
     margin: 0 auto;
     width: 50%;
     transition: transform .2s;
 }
 
-/*.accordion-input:checked~.accordion-item__trigger {}*/
+/*EFFECTS*/
 
+.accordion-item__title:hover {
+    cursor: pointer;
+}
+
+.accordion:hover .accordion-item__icon{
+    display: block;
+}
+
+
+.accordion-input:checked .accordion-item__icon{
+    transform: rotate(-45deg);
+}
 .accordion-input:checked~.accordion-item__content {
     display: block;
     cursor: pointer;
 }
-.accordion-item__img:hover{
+.accordion-input:checked + .accordion-item__trigger .accordion-item__head{
+    color: rgb(0, 0, 0);
+  }
+
+.accordion-item__title:hover{
+    cursor: pointer;
+}
+.accordion-item__img:hover {
     transform: scale(105%);
+}
+.accordion:hover{
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width:1180px) {
+    body {
+        font-size: 2.5vw;
+    }
+
+    .container {
+        max-width: 75%;
+    }
+
+    img {
+        max-width: 90%;
+    }
+}
+
+@media (max-width:320px) {
+    body {
+        font-size: 4vw;
+    }
+
+    .container {
+        max-width: 75%;
+    }
+
+    img {
+        max-width: 100%;
+    }
 }
