@@ -3,7 +3,7 @@
 }
 
 html {
-    scroll-behavior:smooth;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -35,7 +35,7 @@ body {
     display: none;
 }
 
-.accordion-item__trigger {
+.accordion-item__title {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -74,9 +74,9 @@ body {
     opacity: 0.7;
     cursor: pointer;
     transition: 0.3s;
-  }
-@media (hover:hover) and (pointer:fine) {
+}
 
+@media (hover:hover) and (pointer:fine) {
 
     .accordion:hover .accordion-item__icon {
         display: block;
@@ -87,22 +87,24 @@ body {
         transition: 0.3s;
     }
 
-    .accordion:hover .accordion-item__title .accordion-item__trigger .accordion-item__head {
+    .accordion:hover .accordion-item__trigger .accordion-item__title .accordion-item__head {
         color: black;
     }
-    .accordion-input:hover~ .accordion-item__content {
+
+    .accordion-input:hover~.accordion-item__content {
         max-height: 100vh;
         cursor: pointer;
         transition: 1s;
     }
-    .accordion-input:hover~.accordion-item__title .accordion-item__trigger .accordion-item__icon {
+
+    .accordion-item__trigger:hover .accordion-item__title .accordion-item__icon {
         transform: rotate(45deg);
         transition: 0.3s;
     }
 }
 
 /*FUNCTIONALITY*/
-.accordion-input:checked~.accordion-item__title .accordion-item__trigger .accordion-item__icon {
+.accordion-input:checked~.accordion-item__trigger .accordion-item__title .accordion-item__trigger .accordion-item__icon {
     transform: rotate(45deg);
     transition: 0.3s;
 }
@@ -128,7 +130,11 @@ body {
         max-width: 75%;
     }
 
-    img {
+    .bayan-title {
+        font-size: 95%;
+    }
+
+    .accordion-item__img {
         max-width: 90%;
     }
 }
@@ -139,10 +145,14 @@ body {
     }
 
     .container {
-        max-width: 75%;
+        max-width: 50%;
     }
 
-    img {
+    .bayan-title {
+        font-size: 85%;
+    }
+
+    .accordion-item__img {
         max-width: 100%;
     }
 }
